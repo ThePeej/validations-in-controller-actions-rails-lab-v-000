@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @post.content = post_params(:content)
     @post.title = post_params(:title)
     if @post.valid?
-      @post.update(post_params)
+      @post.save
 
     redirect_to post_path(@post)
   end
