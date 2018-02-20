@@ -13,8 +13,10 @@ class PostsController < ApplicationController
     @post.title = post_params(:title)
     if @post.valid?
       @post.save
-
-    redirect_to post_path(@post)
+      redirect_to post_path(@post)
+    else
+      render :edit
+    end
   end
 
   private
